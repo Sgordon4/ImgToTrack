@@ -1,0 +1,57 @@
+Every Set of Disjoint Line Segments Admits a Binary Tree
+http://cgm.cs.mcgill.ca/~godfried/publications/binary.tree.pdf
+
+
+How do I find the connected components in a binary image?
+https://stackoverflow.com/questions/22051069/how-do-i-find-the-connected-components-in-a-binary-image/22085423
+
+
+Connected Component Labeling
+https://en.wikipedia.org/wiki/Connected-component_labeling
+
+
+Perform a two-pass algorithm (Hoshen–Kopelman algorithm) ^ (Bro apparently I reinvented 2pass lol) 
+using 8 connectivity to define individual line segments
+
+
+What is the minimum cost to connect all the islands?
+https://stackoverflow.com/questions/30555606/what-is-the-minimum-cost-to-connect-all-the-islands
+
+
+Implementing a Connected Component Labeling algorithm from scratch
+https://towardsdatascience.com/implementing-a-connected-component-labeling-algorithm-from-scratch-94e1636554f
+
+
+Finding the closest point to a list of points
+https://codereview.stackexchange.com/questions/28207/finding-the-closest-point-to-a-list-of-points
+
+
+Find the nearest point in distance for all the points in the dataset - Python
+https://stackoverflow.com/questions/45127141/find-the-nearest-point-in-distance-for-all-the-points-in-the-dataset-python
+
+
+
+
+KDTree, QuadTree, Voronoi Diagram?
+Make individual kd or quad trees for each component, as we need the closest point from EACH component
+
+
+
+A SIMPLE KD TREE EXAMPLE WITH CUSTOM EUCLIDEAN DISTANCE BALL QUERY. (PYTHON RECIPE)
+http://code.activestate.com/recipes/578434-a-simple-kd-tree-example-with-custom-euclidean-dis/
+
+
+
+
+"Brilliant. There is both a scipy implementation: 
+https://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.spatial.KDTree.html#scipy.spatial.KDTree 
+and a C library that seems like it'll be easy to wrap: 
+https://github.com/jtsiomb/kdtree"
+from
+https://www.biostars.org/p/314460/
+
+
+What is the shortest path in a binary image that covers all the true valued pixels?
+https://stackoverflow.com/questions/60609980/what-is-the-shortest-path-in-a-binary-image-that-covers-all-the-true-valued-pixe
+
+

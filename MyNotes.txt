@@ -1,0 +1,75 @@
+ISU Senior Design Project
+Sysiphus Table
+
+This program takes an image of ??? type and converts it to a table track in cartesian coordinate form.
+The edge detection process follows canny edge detection
+The process is as follows:
+
+Upload image
+Convert image to grayscale
+Apply gaussian blur to smooth image
+Apply Sobel filters to find edges
+Use Non-Maximum supression to thin the edges to one pixel
+Use Double Threshold to connect segments
+
+I use the skimage library for these
+
+
+
+installed 
+scikit-image,
+PyQt5 (for skimage viewer)
+Pillow (unused)
+
+
+Superpixel segmentation seems promising
+
+
+
+
+
+
+When eventually writing code to connect line segments, perhaps look at line density in areas to
+decide how much distance between two segments is acceptable (eg. high density on face, low on neck)
+
+
+
+Using population density as a guide, connect all pixels to any in range (around them / down and right)
+Population density check range should scale with picture res or something
+When 'downscaling res', take thick lines and just decrease them to the center pixel or whatever
+After this, there are bound to be disjoint segments, use another method to bridge across the void
+
+
+
+
+___OO_______O___
+__OOO____OOO____
+___O___OOO__OO__
+____OO__________
+_______OO_______
+___O____O_______
+___O____________
+____OOO_________
+
+
+
+****
+Each pixel in the binary image can only go to  255, which is a problem when trying to perform two-pass
+and there are more than 255 segments. Try to make the binary image use larger data types
+****
+
+
+
+Process semi-complete
+Haven't put it all into one script yet, so to use these files, run in order:
+
+python .\ImgToEdges.py IMAGE_HERE.png
+python .\TwoPass.py 
+python .\makeBright.py 
+python .\ConnectedToTrack.py *******
+python .\PlotFromTxt.py				<- This just takes the track made from ConnectedToTrack and re-plots it for testing
+
+
+*******
+ConnectedToTrack needs a manually entered starting point on an edge from makeBright because I haven't set up
+ something that finds one of the closest points to the edge of the image and uses that yet. 
